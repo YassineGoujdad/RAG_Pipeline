@@ -8,3 +8,5 @@ if __name__ == "__main__":
     store = FaissVectorStore("Faiss_store")
 
     store.build_from_documents(docs )
+
+    print(store.query("what is customer success "),top_k = 3)
