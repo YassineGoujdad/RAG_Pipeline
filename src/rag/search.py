@@ -20,7 +20,7 @@ class RAGSearch:
             self.vectorstore.load()
 
         Openai_api_key = os.getenv("OPEN_AI_KEY")
-        self.llm = ChatOpenAI(Openai_api_key = Openai_api_key, model_name=llm_model)
+        self.llm = ChatOpenAI(api_key = Openai_api_key, model=llm_model, temperature=0)
         print(f"[INFO] OpenAI LLM initialized: {llm_model}")
 
     def search_and_summarize(self, query: str, top_k: int = 5)-> str:
